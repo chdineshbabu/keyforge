@@ -21,13 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <Providers >
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black px-64 py-24 font-Poppins text-black dark:text-slate-200 `}
-      >
-        {children}
-      </body>
-      </Providers>
+        <Providers>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black px-64 py-24 font-Poppins text-black dark:text-slate-200 `}
+          >
+            {children}
+          </body>
+        </Providers>
     </html>
   );
 }

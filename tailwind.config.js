@@ -1,3 +1,7 @@
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,10 +16,20 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-       Poppins: ["Poppins", "system-ui"],
+        Poppins: ["Poppins", "system-ui"],
       },
     },
   },
-  plugins: [],
-  darkMode: 'class'
+  plugins: [addVariablesForColors],
+  darkMode: "class",
 };
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
