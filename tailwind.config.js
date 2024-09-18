@@ -11,7 +11,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+       Poppins: ["Poppins", "system-ui"],
+      },
     },
   },
   plugins: [],
+  darkMode: 'class'
 };
