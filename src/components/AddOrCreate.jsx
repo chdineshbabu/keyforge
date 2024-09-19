@@ -27,6 +27,8 @@ function AddOrCreate() {
     setSeed(seed);
     alert("Account created successfully");
     const currentAccounts = account || [];
+    const [addOpen, setAddOpen] = useState(false);
+
 
     // for (let i = 0; i < 3; i++) {
     //   const path = `m/44'/501'/${i}'/0'`;
@@ -49,7 +51,7 @@ function AddOrCreate() {
   return (
     <div>
       {!seed ? (
-        <div>
+        <div className=" text-center">
           {/* <button
             onClick={addWallet}
             className="border-2 rounded-lg bg-slate-300 text-black p-2 m-2"

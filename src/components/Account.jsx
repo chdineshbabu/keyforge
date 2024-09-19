@@ -13,10 +13,10 @@ function Account({ accounts }) {
           <span className="font-extralight text-xl">Account {index + 1}</span>
           <br />
 
-          <div className="px-14 p-4">
-            <h1 className="py-1">Public Key:</h1>
+          <div className="lg:px-14 p-2 lg:p-4">
+            <h1 className="py-1 ">Public Key:</h1>
             <div className="border-b pr-2 border-slate-700 flex justify-between">
-              <p>{account.pub}</p>
+              <p className="text-sm">{account.pub}</p>
               <CopyToClipboard text={account.pub}>
                 <button>
                   <FaCopy />
@@ -25,10 +25,10 @@ function Account({ accounts }) {
             </div>
           </div>
 
-          <div className="px-14 p-4">
+          <div className="lg:px-14 p-2 lg:p-4">
             <h1 className="py-1">Private Key:</h1>
             <div className="border-b pr-2 border-slate-700 flex justify-between">
-              <p>
+              <p className="text-sm">
                 {"********************************************************"}
               </p>
               <CopyToClipboard text={account.pvt}>

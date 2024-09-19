@@ -25,10 +25,10 @@ export default function Home() {
   };
   return (
     <WalletContextProvider>
-      <div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Navbar />
-        <p className="text-lg py-6 font-extralight ">
-          A web based solana blockchain wallet
+        <p className="text-lg py-6 font-extralight text-center">
+          A web-based Solana blockchain wallet
         </p>
         <AddOrCreate />
       </div>
