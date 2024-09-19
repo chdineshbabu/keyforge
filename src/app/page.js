@@ -25,7 +25,7 @@ export default function Home() {
     <WalletContextProvider>
     <div>
       <Navbar />
-      <p className="text-lg py-6 pb-12 font-extralight ">
+      <p className="text-lg py-6 font-extralight ">
         A web based solana blockchain wallet
       </p>
       <AddOrCreate />

@@ -9,12 +9,11 @@ const ThemeSwitch = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Ensures the component is mounted to avoid mismatch between server and client render
-    setMounted(true);
-    setIsDark(theme === "dark"); // Initialize the switch position based on current theme
+setMounted(true);
+    setIsDark(theme === "dark"); 
   }, [theme]);
 
-  if (!mounted) return null; // Avoids mismatched rendering
+  if (!mounted) return null;
 
   const handleToggle = () => {
     const newTheme = isDark ? "light" : "dark";
