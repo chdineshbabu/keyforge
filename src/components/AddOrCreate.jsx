@@ -23,10 +23,8 @@ function AddOrCreate() {
   const generateSeed = () => {
     const mnemonic = generateMnemonic();
     setMnemonic(mnemonic);
-    console.log(mnemonic);
     const seed = mnemonicToSeedSync(mnemonic);
     setSeed(seed);
-    console.log(seed);
     alert("Account created successfully");
     const currentAccounts = account || [];
 
@@ -42,7 +40,6 @@ function AddOrCreate() {
     //   setAccount([...currentAccounts, { pub: pubKey, pvt: pvtKey, sec: secKey }]);
     // }
 
-    // console.log(account);
   };
 
   const addWallet = () => {
