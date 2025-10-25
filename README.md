@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KeyForge 🔐
 
-## Getting Started
+A modern, web-based Solana blockchain wallet built with Next.js. KeyForge provides a secure and user-friendly interface for managing Solana accounts, generating mnemonic phrases, and handling cryptographic keys.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **🔑 Wallet Creation**: Generate new Solana wallets with secure mnemonic phrases
+- **👥 Multiple Accounts**: Create and manage multiple accounts from a single wallet
+- **🔒 Secure Key Management**: BIP39 mnemonic generation and HD key derivation
+- **📋 Copy to Clipboard**: Easy copying of public and private keys
+- **🌙 Dark/Light Theme**: Toggle between light and dark modes
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
+- **🛡️ Privacy First**: Private keys are masked for security
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd keyforge
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🏗️ Project Structure
+
+```
+keyforge/
+├── src/
+│   ├── app/
+│   │   ├── context/
+│   │   │   └── WalletContextProvider.jsx    # React context for wallet state
+│   │   ├── layout.js                         # App layout
+│   │   ├── page.js                          # Main page component
+│   │   └── providers.jsx                    # App providers
+│   └── components/
+│       ├── Account.jsx                      # Account display component
+│       ├── AddOrCreate.jsx                  # Wallet creation/import
+│       ├── FilledMnemonic.jsx               # Mnemonic phrase display
+│       ├── Navbar.jsx                       # Navigation bar
+│       ├── ThemeSwitcher.jsx                # Theme toggle
+│       └── Wallet.jsx                       # Wallet management
+├── package.json
+├── tailwind.config.js
+└── next.config.mjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 14
+- **UI Library**: NextUI, Material-UI
+- **Styling**: Tailwind CSS
+- **Blockchain**: Solana Web3.js
+- **Cryptography**: 
+  - BIP39 for mnemonic generation
+  - Ed25519 for key derivation
+  - TweetNaCl for cryptographic operations
+- **State Management**: React Context API
+- **Icons**: React Icons
+- **Theming**: Next Themes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🛠️ Available Scripts
 
-## Learn More
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 Security Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **BIP39 Compliant**: Uses industry-standard mnemonic generation
+- **HD Key Derivation**: Hierarchical deterministic key generation
+- **Secure Key Storage**: Keys are stored in memory only (not persisted)
+- **Private Key Masking**: Private keys are hidden by default
+- **Copy Protection**: Secure clipboard operations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📱 Usage
 
-## Deploy on Vercel
+### Creating a New Wallet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Click "Create Wallet" on the main page
+2. Your mnemonic phrase will be generated and displayed
+3. **Important**: Save your mnemonic phrase securely - it's the only way to recover your wallet
+4. Use the toggle to show/hide the mnemonic phrase
+5. Copy the mnemonic phrase to a secure location
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Managing Accounts
+
+1. After creating a wallet, you can generate multiple accounts
+2. Click "New Account" to create additional accounts
+3. Each account has its own public and private key pair
+4. Copy keys using the copy buttons next to each key
+
+### Key Information
+
+- **Public Key**: Your wallet address (safe to share)
+- **Private Key**: Your secret key (never share this)
+- **Mnemonic Phrase**: 24-word recovery phrase (store securely)
+
+## ⚠️ Important Security Notes
+
+- **Never share your private keys or mnemonic phrase**
+- **Store your mnemonic phrase in a secure location**
+- **This is a client-side application - keys are not stored on any server**
+- **Always verify you're on the correct domain before entering sensitive information**
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Solana Foundation for the blockchain infrastructure
+- BIP39 standard for mnemonic generation
+- NextUI and Material-UI for the beautiful components
+- The open-source community for the amazing tools and libraries
+
+## 📞 Support
+
+If you encounter any issues or have questions, please:
+
+1. Check the [Issues](https://github.com/your-username/keyforge/issues) page
+2. Create a new issue with detailed information
+3. Join our community discussions
+
+---
+
+**⚠️ Disclaimer**: This software is for educational and development purposes. Always use official wallets for production use and large amounts of cryptocurrency.
